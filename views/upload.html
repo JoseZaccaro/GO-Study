@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+<body>
+    {{template "header" .}}
+    <div class="flex-1 px-4">
+        <h1>Upload file</h1>
+
+        {{if ne .css ""}}
+        <div class="alert alert-{{.css}} alert-dismissible fade show">
+
+            {{.message}}
+            <button type="button" class="btn btn-close" aria-label="Close" data-bs-dismiss="alert">
+                Close
+            </button>
+
+        </div>
+        {{end}}
+
+        <form action="/upload-post" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="photo" class="form-label">Choose a photo</label>
+                <input
+                    type="file"
+                    class="form-control"
+                    name="photo"
+                    id="photo"
+                    placeholder="photo"
+                    aria-describedby="fileHelpId"
+                />
+                <div id="fileHelpId" class="form-text">A photo of yourself</div>
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+
+
+    </div>
+    {{template "footer" .}}
+</body>
+</html>

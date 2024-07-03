@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+
+<body>
+    {{template "header" .}}
+    <div class="flex-1">
+        <h1>MySQL page route</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{range .users}}
+                    <tr>
+                        <td>{{.ID}}</td>
+                        <td>{{.Nombre}}</td>
+                        <td>{{.Correo}}</td>
+                    </tr>
+                    {{end}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {{template "footer" .}}
+</body>
+
+</html>

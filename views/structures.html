@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+
+
+<body>
+
+    {{template "header" .}}
+    <div class="flex-1">
+        <h1>Structures route</h1>
+        <h3>Declaracion de variables</h3>
+        {{with $valor := "algo"}}
+        <p>Variable = {{$valor}}</p>
+        {{end}}
+        <hr />
+        <h3>Valores desde un struct</h3>
+        <p>Nombre = {{.Person.Nombre}}</p>
+        <p>Edad = {{.Person.Edad}}</p>
+        <p>Perfil = {{.Person.Perfil}}</p>
+        <hr />
+        <h3>Condicionales</h3>
+        {{if ge .Person.Edad 18}}
+        <p>Eres mayor de edad</p>
+        {{else}}
+        <p>Eres menor de edad</p>
+        {{end}}
+
+        {{if eq .Person.Perfil 1}}
+        <p>Eres un estudiante</p>
+        {{else if eq .Person.Perfil 2}}
+        <p>Eres un profesor</p>
+        {{else if eq .Person.Perfil 3}}
+        <p>Eres un egresado</p>
+        {{else}}
+        <p>Eres un desconocido</p>
+        {{end}}
+
+        <hr />
+
+        <h3>Iteraciones</h3>
+        Habilidades: {{.Person.Habilidades | len}} => {{.Person.Habilidades}}
+        <ol>
+            {{range .Person.Habilidades}}
+            <li>{{.Nombre}}</li>
+            {{end}}
+        </ol>
+    </div>
+    {{template "footer" .}}
+
+</body>
+
+</html>

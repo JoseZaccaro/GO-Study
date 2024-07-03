@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+
+<body>
+    {{template "header" .}}
+    <div class="flex-1">
+
+        <h1>Params route </h1>
+        <ul>
+            <li>ID: {{.id}}</li>
+            <li>Slug: {{.slug}}</li>
+            <li>Texto: {{.texto}}</li>
+        </ul>
+    </div>
+    {{template "footer" .}}
+</body>
+
+</html>

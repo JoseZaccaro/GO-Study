@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+
+<body>
+    {{template "header" .}}
+    <div class="flex-1">
+        <h1>Api consumer page route</h1>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID_Character</th>
+                        <th>Nombre</th>
+                        <th>Especie</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{range .body.Results}}
+                    <tr>
+                        <td>{{.ID}}</td>
+                        <td>{{.Name}}</td>
+                        <td>{{.Species}}</td>
+                    </tr>
+                    {{end}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {{template "footer" .}}
+</body>
+
+</html>

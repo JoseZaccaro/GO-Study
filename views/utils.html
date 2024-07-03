@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+
+<body>
+    {{template "header" .}}
+    <div class="flex-1 px-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/util-resources">Utils</a></li>
+            </ol>
+        </nav>
+
+        <h1>Utils</h1>
+
+        <ul class="list-group">
+            <li class="list-group-item"><a href="/util-resources/pdf">Pdf generator</a></li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+
+    </div>
+    {{template "footer" .}}
+</body>
+
+</html>
